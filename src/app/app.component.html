@@ -25,15 +25,15 @@
 
       <title>DXS</title>
        <img src="https://dataxstudios.com.br/assets/images/DXS_ico-300x300.png" width="101.678" height="101.678" />     
-    <span><app-title></app-title> | {{valor}}</span>
+    <span><app-title *ngIf="this.destruir"></app-title> | {{valor}}</span>
     <button (click)="adicionar()">ADICIONAR</button>
+    <button (click)="destruirComponent()">{{botao_de_destruir}}</button>
   </div>
 
   <!-- Resources -->
-  <h2>Resources</h2>
-  <p>Here are some links to help you get started:</p>
-
-  <div class="card-container">
+  <h2>APLICAÇÕES</h2>
+    <app-data-binding></app-data-binding>
+    <div class="card-container">
     <a class="card" target="_blank" rel="noopener" href="https://angular.io/tutorial">
       <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
       <span>Learn Angular</span>

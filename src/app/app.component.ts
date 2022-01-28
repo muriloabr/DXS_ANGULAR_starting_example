@@ -11,6 +11,8 @@ export class AppComponent implements OnInit, DoCheck, AfterContentInit, AfterCon
   
   public title = 'DXS | APP ANGULAR: START'; // Libera para Interpolation no HTML, sendo PUBLIC vai ser liberado para usar no HTML
   public valor: number = 1;
+  public destruir: boolean = true;
+  public botao_de_destruir: string = "DESTURA!";
 
   constructor() {
     console.log('Passando pelo constructor() da CLASSE');
@@ -19,6 +21,17 @@ export class AppComponent implements OnInit, DoCheck, AfterContentInit, AfterCon
   {
     return this.valor += 1;
   }
+
+  public destruirComponent(){
+    if(this.destruir){
+      this.destruir = false;
+      this.botao_de_destruir = "RECONSTURA!";
+    } else {
+      this.destruir = true;
+      this.botao_de_destruir = "DESTURA!";
+    }
+  }
+
   ngOnInit(): void {
     console.log('VALOR 1 : ' + (this as any).value1);
     console.log('VALOR 2 : ' + (this as any).value2);

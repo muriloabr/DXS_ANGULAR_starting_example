@@ -1,0 +1,9 @@
+<h4>INTERPOLATION</h4>
+A {{ nomeEmpresa }} tem {{ projetos }} projetos concluídos!
+<br>
+Ultrapassamos 100 projetos?
+<br>
+{{ (projetos >= 100)?"SIM!":"NÃO!" }}
+<h4>PROPERTY BINDING</h4>
+<input type="checkbox" (change)="habilitarBotao()">
+<button [disabled]="checkedDisabled" (click)="alertaInfo()">APLICAR</button>

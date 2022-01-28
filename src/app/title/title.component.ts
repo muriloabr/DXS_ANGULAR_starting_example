@@ -1,14 +1,13 @@
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-title',
   templateUrl: './title.component.html',
   styleUrls: ['./title.component.scss']
 })
-export class TitleComponent implements OnInit, OnChanges {
+export class TitleComponent implements OnInit, OnChanges, OnDestroy {
 
   @Input() public title: string = "TITULO DO INPUT EM COMPTITLE";
-
   constructor() { }
 
   ngOnInit(): void { //inicializado componente
@@ -18,6 +17,8 @@ export class TitleComponent implements OnInit, OnChanges {
     console.log("TITLE ALTERADO DE FORA DO COMPONENTE");
   }
 
-
+  ngOnDestroy(): void {
+    console.log("TITLE MORREU");
+  }
 
 }
